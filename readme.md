@@ -8,6 +8,15 @@ La librairie polars se situe entre la librairie pandas et la librairie duckdb :
 - Polars a moins de fonctionnalités que sur Pandas, il ne peut pas par exemple, travailler directement sur un fichier Excel
 - Tout comme duckdb, il est possible d'effectuer des traitements SQL avec polars (voir indexA004_sql)
 
+Pour les fichiers CSV de gros volumes, convertit ces fichiers en parquet avec l'instruction suivante avec polars :
+
+```python
+import polars as pl
+
+df = pl.scan_csv('*.csv')
+df.sink_parket('*.parquet')
+```
+
 **Cours présents dans le répertoire notebooks :** <br>
 
 - indexA : introduction à polars
